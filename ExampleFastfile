@@ -23,7 +23,7 @@ platform :ios do
   end
 
   desc "App Store"
-  lane :appstore do
+  lane :production do
     build("#{app_name}-AppStore", 'app-store')
     run_tests
   end
