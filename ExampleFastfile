@@ -6,6 +6,8 @@ platform :ios do
 
   before_all do
     ENV['RZ_APP_NAME'] = 'MyApp'
+    
+    super_before
   end
 
   desc "Develop"
