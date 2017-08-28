@@ -53,8 +53,8 @@ platform :ios do
 
   # Helpers
 
-  def build(scheme, export_method, use_legacy_build = true)
-    puts "Building scheme #{scheme} legacy: #{use_legacy_build} export: #{export_method}"
+  def build(scheme, export_method)
+    puts "Building scheme #{scheme} export: #{export_method}"
 
     set_build_number
     gym(
@@ -65,7 +65,6 @@ platform :ios do
       scheme: scheme,
       workspace: workspace_name,
       xcargs: "BUILD_NUMBER=#{build_number}",
-      use_legacy_build_api: use_legacy_build,
       export_method: export_method
     )
   end

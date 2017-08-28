@@ -1,4 +1,4 @@
-fastlane_version "1.55.0"
+fastlane_version "2.51.0"
 default_platform :ios
 import_from_git(url:"git@github.com:Raizlabs/fastlane-shared.git", path:"SharedFastfile.rb")
 
@@ -6,6 +6,8 @@ platform :ios do
 
   before_all do
     ENV['RZ_APP_NAME'] = 'MyApp'
+    
+    super_before
   end
 
   desc "Develop"
@@ -23,7 +25,7 @@ platform :ios do
   end
 
   desc "App Store"
-  lane :appstore do
+  lane :production do
     build("#{app_name}-AppStore", 'app-store')
     run_tests
   end
